@@ -7,6 +7,7 @@ impl Drop for Application {
     // 値がヒープから解放されるタイミングでDropトレイトのdrop()が呼び出される
     // C++のデストラクタやJavaのファイナライザに似ている
     // dropメソッドは暗黙的呼び出ししか許可されず、自分で呼び出そうとするとエラーになる
+    // ある型がDropトレイトを実装しているなら、Copyトレイトは実装できない
     fn drop(&mut self) {
         print!("Dropping {}", self.name);
         if !self.nicknames.is_empty() {
