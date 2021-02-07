@@ -22,7 +22,7 @@ impl Drop for Application {
 // ?SizedはSizedかもしれない型（questionably sized）を表現する
 // デフォルトではすべての型はSizedとしてマーカートレイトされる
 struct S<T: ?Sized> {
-    value: T
+    b: Box<T>
 }
 
 fn main() {
