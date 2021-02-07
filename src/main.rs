@@ -32,4 +32,7 @@ fn main() {
     println!("before assignment");
     _a = Application { name: "Hera".to_string(), nicknames: vec![] };
     println!("at end of block");
+
+    let _s: S<str>; // Box<str>はunsizedなので_sははunsized
+    let _i: S<i32>; // Box<i32>はsizedなので、_iはsized
 }
