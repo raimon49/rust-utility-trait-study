@@ -19,6 +19,12 @@ impl Drop for Application {
     }
 }
 
+// ?SizedはSizedかもしれない型（questionably sized）を表現する
+// デフォルトではすべての型はSizedとしてマーカートレイトされる
+struct S<T: ?Sized> {
+    value: T
+}
+
 fn main() {
     let mut _a = Application { name: "Zeus".to_string(),
                                nicknames: vec!["cloud collector".to_string(),
