@@ -25,6 +25,14 @@ struct S<T: ?Sized> {
     b: Box<T>
 }
 
+struct Selector<T> {
+    // 型 `Selector` で利用できる要素
+    elements: Vec<T>,
+    // `elements` 内の「現在使用している」要素を示す。
+    // `Selector` は、現在使用している要素へのポインタとして機能する。
+    current: usize
+}
+
 fn main() {
     let mut _a = Application { name: "Zeus".to_string(),
                                nicknames: vec!["cloud collector".to_string(),
