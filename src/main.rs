@@ -58,4 +58,8 @@ fn main() {
 
     let _s: S<str>; // Box<str>はunsizedなので_sははunsized
     let _i: S<i32>; // Box<i32>はsizedなので、_iはsized
+
+    let mut s = Selector { elements: vec!['x', 'y', 'z'],
+                           current: 2 };
+    assert_eq!(*s, 'z');
 }
