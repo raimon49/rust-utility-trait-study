@@ -61,6 +61,9 @@ fn main() {
 
     let mut s = Selector { elements: vec!['x', 'y', 'z'],
                            current: 2 };
+    // SelectorはDerefを実装しているので*演算子を使って現在使用している要素を参照できる
     assert_eq!(*s, 'z');
+
+    // 'z'がアルファベットかどうかをchar型のメソッドをSelectorに対して呼び出し、参照解決変換が呼ばれチェックできる
     assert!(s.is_alphabetic());
 }
