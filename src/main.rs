@@ -48,6 +48,10 @@ impl<T> DerefMut for Selector<T> {
     }
 }
 
+fn show_it(thing: &str) {
+    println!("{}", thing);
+}
+
 fn main() {
     let mut _a = Application { name: "Zeus".to_string(),
                                nicknames: vec!["cloud collector".to_string(),
@@ -66,4 +70,8 @@ fn main() {
 
     // 'z'がアルファベットかどうかをchar型のメソッドをSelectorに対して呼び出し、参照解決変換が呼ばれチェックできる
     assert!(s.is_alphabetic());
+
+    let current_as_str = Selector { elements: vec!["good", "bad", "ugly"],
+                                    current: 2 };
+    show_it(&current_as_str);
 }
