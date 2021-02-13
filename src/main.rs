@@ -73,5 +73,5 @@ fn main() {
 
     let current_as_str = Selector { elements: vec!["good", "bad", "ugly"],
                                     current: 2 };
-    show_it(&current_as_str);
+    show_it(&current_as_str); // Rustコンパイラは引数の型が&Selector<&str>であり、Deref<Target=str>の実装を見つけて関数呼び出しをshow_it(s.deref())と書き換えてくれる
 }
