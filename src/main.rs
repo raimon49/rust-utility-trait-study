@@ -52,6 +52,11 @@ fn show_it(thing: &str) {
     println!("{}", thing);
 }
 
+use std::fmt::Display;
+fn show_it_generic<T: Display>(thing: T) {
+    println!("{}", thing);
+}
+
 fn main() {
     let mut _a = Application { name: "Zeus".to_string(),
                                nicknames: vec!["cloud collector".to_string(),
