@@ -81,4 +81,10 @@ fn main() {
     show_it(&current_as_str); // Rustコンパイラは引数の型が&Selector<&str>であり、Deref<Target=str>の実装を見つけて関数呼び出しをshow_it(s.deref())と書き換えてくれる
 
     show_it_generic(&current_as_str as &str); // as演算子で明示的に型変換して呼び出さないと「`Selector<&str>` doesn't implement `std::fmt::Display`」コンパイルエラーとなる
+
+    use std::collections::HashSet;
+    let squares = [4, 9, 16, 25, 36, 49, 64];
+    let (powers_of_two, impure): (HashSet<i32>, HashSet<i32>) = squares.iter().partition(|&n| n & (n-1) == 0);
+    assert_eq!(powers_of_two.len(), 3);
+    assert_eq!(impure.len(), 4);
 }
