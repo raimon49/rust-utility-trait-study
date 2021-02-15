@@ -82,6 +82,7 @@ fn main() {
 
     show_it_generic(&current_as_str as &str); // as演算子で明示的に型変換して呼び出さないと「`Selector<&str>` doesn't implement `std::fmt::Display`」コンパイルエラーとなる
 
+    // Iteratorトレイトのpartitionメソッドは各コレクション型の実装するDefaultトレイトで空のコレクションを作って2つに分割する
     use std::collections::HashSet;
     let squares = [4, 9, 16, 25, 36, 49, 64];
     let (powers_of_two, impure): (HashSet<i32>, HashSet<i32>) = squares.iter().partition(|&n| n & (n-1) == 0);
