@@ -89,6 +89,7 @@ fn main() {
     assert_eq!(powers_of_two.len(), 3);
     assert_eq!(impure.len(), 4);
 
+    // StringもDefaultとExtend<char>を実装しているため、partition() + クロージャで次のように分割できる
     let (upper, lower): (String, String) = "Great Teacher Onizuka".chars().partition(|&c| c.is_uppercase());
     assert_eq!(upper, "GTO");
     assert_eq!(lower, "reat eacher nizuda");
