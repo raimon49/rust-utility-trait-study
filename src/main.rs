@@ -93,4 +93,8 @@ fn main() {
     let (upper, lower): (String, String) = "Great Teacher Onizuka".chars().partition(|&c| c.is_uppercase());
     assert_eq!(upper, "GTO");
     assert_eq!(lower, "reat eacher nizuda");
+
+    // fn open<P: AsRef<Path>>(path: P) -> Result<File> が要求するのはAsRefを実装した型であるため、
+    // Stringやstrも引数に取ることができる
+    let _dot_emacs = std::fs::File::open("/home/jimb/.emacs");
 }
