@@ -104,4 +104,8 @@ fn main() {
     // fn open<P: AsRef<Path>>(path: P) -> Result<File> が要求するのはAsRefを実装した型であるため、
     // Stringやstrも引数に取ることができる
     let _dot_emacs = std::fs::File::open("/home/jimb/.emacs");
+
+    ping(Ipv4Addr::new(23, 21, 68, 141));
+    ping([66, 146, 219, 98]);
+    ping(0xd076eb94_u32);
 }
