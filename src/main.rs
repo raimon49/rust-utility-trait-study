@@ -109,4 +109,9 @@ fn main() {
     ping(Ipv4Addr::new(23, 21, 68, 141));
     ping([66, 146, 219, 98]);
     ping(0xd076eb94_u32);
+
+    // Fromトレイトはある型から別の型のインスタンスを生成する汎用コンストラクタとして機能する
+    let addr1 = Ipv4Addr::from([66, 146, 219, 98]);
+    let addr2 = Ipv4Addr::from(0xd076eb94_u32);
+    assert_eq!(addr1, addr2);
 }
