@@ -105,6 +105,7 @@ fn main() {
     // Stringやstrも引数に取ることができる
     let _dot_emacs = std::fs::File::open("/home/jimb/.emacs");
 
+    // ping()はInto<Ipv4Addr>を実装していて.into()が呼べることを期待している
     ping(Ipv4Addr::new(23, 21, 68, 141));
     ping([66, 146, 219, 98]);
     ping(0xd076eb94_u32);
