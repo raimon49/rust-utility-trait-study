@@ -99,7 +99,7 @@ fn main() {
     // StringもDefaultとExtend<char>を実装しているため、partition() + クロージャで次のように分割できる
     let (upper, lower): (String, String) = "Great Teacher Onizuka".chars().partition(|&c| c.is_uppercase());
     assert_eq!(upper, "GTO");
-    assert_eq!(lower, "reat eacher nizuda");
+    assert_eq!(lower, "reat eacher nizuka");
 
     // fn open<P: AsRef<Path>>(path: P) -> Result<File> が要求するのはAsRefを実装した型であるため、
     // Stringやstrも引数に取ることができる
