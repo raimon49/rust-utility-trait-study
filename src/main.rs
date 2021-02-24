@@ -114,4 +114,7 @@ fn main() {
     let addr1 = Ipv4Addr::from([66, 146, 219, 98]);
     let addr2 = Ipv4Addr::from(0xd076eb94_u32);
     assert_eq!(addr1, addr2);
+
+    let text = "Beautiful Soup".to_string();
+    let bytes: Vec<u8> = text.into();
 }
