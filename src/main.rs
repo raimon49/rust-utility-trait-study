@@ -115,6 +115,15 @@ fn main() {
     let addr2 = Ipv4Addr::from(0xd076eb94_u32);
     assert_eq!(addr1, addr2);
 
+    // StringのInto<Vec<u8>>の実装は、Stringのヒープバッファを取り、そのままベクタの要素バッファとして返す
+    // 所有権が移動しているため変数textはもう使えない点に注意
     let text = "Beautiful Soup".to_string();
     let bytes: Vec<u8> = text.into();
+    println!("{} bytes", bytes.len());
+    for (_i, b) in bytes.iter().enumerate() {
+        print!("{:02.x} ", b); // bytesの中身を16進数文字コードで表示:w
+
+    }
+    println!();
+    println!("{}", String::from_utf8(bytes).unwrap()); // bytesをStringに戻して表示
 }
